@@ -3,13 +3,16 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-	<servlet>
-		<servlet-name>test</servlet-name>
-		<servlet-class>com.test.web.HelloServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>test</servlet-name>
-		<url-pattern>/hello</url-pattern>
-	</servlet-mapping>
+  <servlet-name>Jersey REST Service</servlet-name>  
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>  
+    <init-param>  
+        <param-name>jersey.config.server.provider.packages</param-name>  
+        <param-value>com.test.web</param-value>  
+    </init-param>  
+    <load-on-startup>1</load-on-startup>  
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>Jersey REST Service</servlet-name>  
+    <url-pattern>/rest/*</url-pattern>  
+  </servlet-mapping>  
 </web-app>
