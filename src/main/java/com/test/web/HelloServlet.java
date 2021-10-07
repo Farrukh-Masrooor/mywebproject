@@ -28,7 +28,18 @@ public class HelloServlet{
   @GET  
   public String sayXMLHello() {  
     return "<?xml version=\"1.0\"?>" + "<hello> Hello Jersey" + "</hello>";  
+
   }  
-  
+
+  @Get("/feedback")
+  public Response getfeedBack(){
+    List<FeedBack> feedbacks= new ArrayList<FeedBack>();
+    feedbacks.add(new FeedBack("redmi8",7));
+    feedbacks.add(new FeedBack("iphonex",8));
+    feedbacks.add(new FeedBack("galaxym2",7));
+
+    return Response.status(Response.Status.OK)
+  }
+ 
   
 }   
