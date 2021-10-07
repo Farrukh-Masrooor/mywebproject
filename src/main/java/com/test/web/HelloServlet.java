@@ -19,7 +19,7 @@ public class HelloServlet{
   @Path("/feedback")
   public Response getfeedBack(){
    
-    return Response.status(Response.Status.OK).entity(new FeedBack("nokia",4)).build();
+    return Response.status(Response.Status.OK).build();
   }
  
   
