@@ -3,8 +3,7 @@ package com.test.web;
 import javax.ws.rs.GET;  
 import javax.ws.rs.Path;  
 
-import javax.ws.rs.core.Response;  
-import com.test.beans.*;
+
 @Path("/")  
 public class HelloServlet{  
  
@@ -15,12 +14,7 @@ public class HelloServlet{
 
   }  
 
-  @GET
-  @Path("/feedback")
-  public Response getfeedBack(){
-   
-    return Response.status(Response.Status.OK).build();
-  }
+ 
  
   
 }   
