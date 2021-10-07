@@ -1,5 +1,8 @@
 package com.test.beans;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class FeedBack{
     private String productName;
     private int rating;
