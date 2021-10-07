@@ -1,26 +1,10 @@
 package com.test.web;
-/*
-import javax.ws.rs.GET;  
-import javax.ws.rs.Path;  
-import javax.ws.rs.Produces;  
-import javax.ws.rs.core.MediaType; 
-
-@Path("/")
-public class HelloServlet{
-	
-	@Get
-	@Produces(MediaType.TEXT_HTML)
-	public String helloFromJaxRs(){
-	return "hello from jax -rs web services";
-	}
-
-}
-*/
 
 import javax.ws.rs.GET;  
 import javax.ws.rs.Path;  
-import javax.ws.rs.Produces;  
-import javax.ws.rs.core.MediaType;  
+
+import javax.ws.rs.core.Response;  
+import com.test.beans.*;
 @Path("/")  
 public class HelloServlet{  
  
@@ -31,14 +15,11 @@ public class HelloServlet{
 
   }  
 
-  @Get("/feedback")
+  @GET
+  @Path("/feedback")
   public Response getfeedBack(){
-    List<FeedBack> feedbacks= new ArrayList<FeedBack>();
-    feedbacks.add(new FeedBack("redmi8",7));
-    feedbacks.add(new FeedBack("iphonex",8));
-    feedbacks.add(new FeedBack("galaxym2",7));
-
-    return Response.status(Response.Status.OK)
+   
+    return Response.status(Response.Status.OK).entity(new FeedBack("nokia",4)).build();
   }
  
   
